@@ -29,3 +29,20 @@ function Maps() {
 }
   
 export default Maps;
+
+var axios = require("axios").default;
+
+var options = {
+  method: 'GET',
+  url: 'https://maptiles.p.rapidapi.com/es/map/v1/3/4/2.png',
+  headers: {
+    'x-rapidapi-host': 'maptiles.p.rapidapi.com',
+    'x-rapidapi-key': '5d489e9cd6msh20227e06cd4f5eap1b6f12jsnb3e92f560f2b'
+  }
+};
+
+axios.request(options).then(function (response) {
+	console.log(response.data);
+}).catch(function (error) {
+	console.error(error);
+});
