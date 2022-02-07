@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Lista from './components/Lista';
-import Maps from './components/Maps/Maps'
+import Waze from './components/Waze/Waze'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Lista/>
-    <Maps/>
+    <Waze/>
   </React.StrictMode>,
   document.getElementById('root')
 );
