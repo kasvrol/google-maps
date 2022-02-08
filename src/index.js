@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Waze from './components/Waze/Waze'
-import Maps from './components/Maps/Maps'
+import Coordinate from './components/Coordinate/Coordinate'
 
 ReactDOM.render(
   <React.StrictMode>
     <Waze/>
-    <Maps/>
+    <Coordinate/>
   </React.StrictMode>,
   document.getElementById('root')
 );

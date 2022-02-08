@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-function Maps() {
+function Coordinate() {
 
     let lat = []
     let lng
@@ -40,4 +40,4 @@ return (
     );
 }
 
-export default Maps;
+export default Coordinate;
