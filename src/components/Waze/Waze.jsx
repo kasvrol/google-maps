@@ -5,35 +5,53 @@ import './Waze.scss'
 
 function Waze() {
 
+  // variáveis
   let elementOfArray
-  let acumulador = []
+  let arrayStreet = []
+  let number
+  let nomeDaRua
+  let endereco
 
-  const email = 'Use Waze para dirigir até 4270 - 4324 R. Brasílio Itiberê: https://waze.com/ul/h6gkznqrkk'
-  let separador = email.split(':').join(' ').split(' ')  
+  // Pega email
+  const email = 'Use Waze para dirigir até 1106 - 1281 R. Atílio Bório: https://waze.com/ul/h6gkzr5xdd'
+  let arrayOfString = email.split(':').join(' ').split(' ')  
 
-  for (let index = 0; index < separador.length; index++) {
+
+  // Conta os elementos
+  for (let index = 0; index < arrayOfString.length; index++) {
     elementOfArray = index;
-    console.log(elementOfArray)
   }
 
-  for (let i = 5; i <= separador.length && i<(elementOfArray - 2); i++) {
-    acumulador.push(separador[i]);
+  // Isola o endereço
+  for (let i = 5; i <= arrayOfString.length && i<(elementOfArray - 2); i++) {
+    arrayStreet.push(arrayOfString[i]);
   }
-  
-  let nomeDaRua = acumulador.filter(() => (isNaN))
-  console.log(nomeDaRua);
 
-  let numeroDaRua = acumulador.map(Number)
-  console.log(numeroDaRua);
 
-  acumulador = acumulador.join(' ')
+  // Separa o número do endereço
+  let numberOfStreet = arrayStreet.map(Number).filter((value) => (value%1)===0)
+  number = numberOfStreet.join(' - ')
+
+
+  // Isola o nome da rua do endereço
+  if(numberOfStreet.length === 2){
+    nomeDaRua = arrayStreet.splice(3,3).join(' ')
+    endereco = `${nomeDaRua}, ${number}`
+  }
+  else if(numberOfStreet.length === 1){
+    nomeDaRua = arrayStreet.splice(0,1).join(' ')
+    endereco = `${nomeDaRua}, ${number}`
+  }
+  else{
+    nomeDaRua = arrayStreet.join(' ')
+    endereco = `${nomeDaRua}`
+  }
 
     return (
       <div className='mapa-waze'>
-        <h1>achei numero = {elementOfArray}</h1>
-        <h2>{acumulador}</h2>
+        <h2>{endereco}</h2>
       </div>
     );
-  }
+}
   
-  export default Waze;
+export default Waze;
