@@ -1,9 +1,9 @@
 import React from 'react'
 
-import './Waze.scss'
+import './Address.scss'
 
 
-function Waze() {
+function Address() {
 
   // variáveis
   let elementOfArray
@@ -54,4 +54,4 @@ function Waze() {
     );
 }
   
-export default Waze;
+export default Address;
