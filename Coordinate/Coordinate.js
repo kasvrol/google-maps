@@ -1,12 +1,8 @@
-import React from 'react'
-
-import './Coordinate.scss'
-
-
 function Coordinate() {
 
     let lat = []
     let lng
+    const coordinate
 
     // Pega o email enviado
 const url = 'Use Waze para dirigir até 1106 - 1281 R. Atílio Bório: https://waze.com/ul/h6gkzr5xdd'
@@ -34,12 +30,7 @@ lat = lat.join('.')
 lng = coordenadas[1]
 
 
-return (
-    <div>
-        <h2>latitude: {lat}</h2>
-        <h2>longitude: {lng}</h2>        
-    </div>
-    );
+return coordinate = `${lat}, ${lng}`
 }
 
 export default Coordinate;

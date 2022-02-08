@@ -1,16 +1,11 @@
-import React from 'react'
-
-import './Address.scss'
-
-
 function Address() {
 
   // variáveis
   let elementOfArray
   let arrayStreet = []
   let number
-  let nomeDaRua
-  let endereco
+  let name
+  let address
 
   // Pega email
   const email = 'Use Waze para dirigir até 1106 - 1281 R. Atílio Bório: https://waze.com/ul/h6gkzr5xdd'
@@ -35,23 +30,19 @@ function Address() {
 
   // Isola o nome da rua do endereço
   if(numberOfStreet.length === 2){
-    nomeDaRua = arrayStreet.splice(3,3).join(' ')
-    endereco = `${nomeDaRua}, ${number}`
+    name = arrayStreet.splice(3,3).join(' ')
+    address = `${name}, ${number}`
   }
   else if(numberOfStreet.length === 1){
-    nomeDaRua = arrayStreet.splice(0,1).join(' ')
-    endereco = `${nomeDaRua}, ${number}`
+    name = arrayStreet.splice(0,1).join(' ')
+    address = `${name}, ${number}`
   }
   else{
-    nomeDaRua = arrayStreet.join(' ')
-    endereco = `${nomeDaRua}`
+    name = arrayStreet.join(' ')
+    address = `${name}`
   }
 
-    return (
-      <div className='mapa-waze'>
-        <h2>{endereco}</h2>
-      </div>
-    );
+    return address
 }
   
 export default Address;
